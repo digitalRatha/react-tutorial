@@ -3,6 +3,7 @@ import "./App.css";
 import Collapse from "./Collapse";
 import Condition from "./Condition";
 import Contact from "./Contact";
+import Effect from "./Effect";
 import Listing from "./Listing";
 import ListingJson from "./ListingJson";
 
@@ -32,7 +33,7 @@ function App() {
       {/* <Condition></Condition> */}
       {/* <Listing></Listing> */}
       {/* <ListingJson></ListingJson> */}
-      <Collapse></Collapse>
+    <Effect/>
     </div>
   );
 }
