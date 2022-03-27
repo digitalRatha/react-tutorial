@@ -14,8 +14,11 @@ export default function Contact() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formval);
-    if (formval) {
+    if (formval.name !== '' && formval.contactno !== '' && formval.email !== '' && formval.message !== '' ) {
       postContact(formval);
+    }
+    else{
+      alert('Form is invalid')
     }
   };
 
@@ -39,9 +42,16 @@ export default function Contact() {
     }
   };
   const postContact = async (formval) => {
+
     try {
       let postData = await axios.post(postContactApiUrl, formval);
-      getContacts()
+      getContacts();
+      setFormVal({
+        name: "",
+        contactno: "",
+        email: "",
+        message: "",
+      })
     } catch (e) {
       console.log(e);
     }
