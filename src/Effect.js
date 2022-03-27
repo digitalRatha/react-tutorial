@@ -3,9 +3,17 @@ import axios from "axios";
 
 export default function Effect() {
   const [posts, setPosts] = useState([]);
-  const [title, setTitle] = useState('Blank');
+  const [title, setTitle] = useState("Blank");
+
   useEffect(() => {
-    fetchPosts();
+    let isSubscribed = true;
+    if(isSubscribed){
+      fetchPosts();
+    }
+
+    return () => {
+      isSubscribed = false;
+    };
   }, []);
 
   const fetchPosts = async () => {

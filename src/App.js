@@ -33,7 +33,8 @@ function App() {
       {/* <Condition></Condition> */}
       {/* <Listing></Listing> */}
       {/* <ListingJson></ListingJson> */}
-    <Effect/>
+    {/* <Effect/> */}
+    <Contact />
     </div>
   );
 }
